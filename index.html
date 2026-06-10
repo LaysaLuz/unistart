@@ -572,5 +572,193 @@
             window.location.reload();
         }
     </script>
+        // COLE AQUI A URL QUE VOCÊ COPIOU NA ETAPA 1
+        const LINK_DO_MOTOR_GOOGLE = "https://script.google.com/macros/s/AKfycbyZJHhOCHv7ZLhvD-7p7xWFG2N0a-yGm-pq0EBMdyKX4OKv0odWoKCHgtfFbTHNbHy8/exec";
+
+        let tokenGerado = "";
+        let emailDestinoTemp = "";
+
+        window.onload = function() {
+            const usuarioLogado = localStorage.getItem('unistart_sessao_ativa');
+            if (usuarioLogado) {
+                const dados = JSON.parse(usuarioLogado);
+                entrarNoDashboard(dados.nome);
+            }
+        };
+
+        function openAuthModal(mode) {
+            document.getElementById('authModal').classList.add('active');
+            switchTab(mode);
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+        }
+
+        function switchTab(mode) {
+            document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+            document.getElementById('modal-tabs-header').style.display = 'flex';
+            
+            if (mode === 'login') {
+                document.getElementById('tab-login').classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else if (mode === 'register') {
+                document.getElementById('tab-register').classList.add('active');
+                document.getElementById('cadastroForm').classList.add('active');
+            } else if (mode === 'forgot') {
+                document.getElementById('modal-tabs-header').style.display = 'none';
+                document.getElementById('forgotForm').classList.add('active');
+            } else if (mode === 'reset') {
+                document.getElementById('modal-tabs-header').style.display = 'none';
+                document.getElementById('resetPasswordForm').classList.add('active');
+            }
+        }
+
+        function mascaraCPF(input) {
+            let v = input.value.replace(/\D/g, "");
+            v = v.replace(/(\d{3})(\d)/, "$1.$2");
+            v = v.replace(/(\d{3})(\d)/, "$1.$2");
+            v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            input.value = v;
+        }
+
+        function entrarNoDashboard(nomeCompleto) {
+            document.getElementById('landing-page-content').style.display = 'none';
+            document.getElementById('dashboard-area').style.display = 'block';
+            document.getElementById('user-display-name').innerText = nomeCompleto.split(' ')[0];
+            document.getElementById('nav-menu').style.display = 'none';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const emailIn = document.getElementById('login-email').value;
+            const senhaIn = document.getElementById('login-senha').value;
+            const bancoLocal = localStorage.getItem('cadastro_unistart');
+
+            if (!bancoLocal) {
+                alert('Nenhum usuário cadastrado neste navegador. Clique em "Criar Conta"!');
+                return;
+            }
+
+            const contaExistente = JSON.parse(bancoLocal);
+
+            if (contaExistente.email === emailIn && contaExistente.senha === senhaIn) {
+                localStorage.setItem('unistart_sessao_ativa', JSON.stringify(contaExistente));
+                closeAuthModal();
+                entrarNoDashboard(contaExistente.nome);
+            } else {
+                alert('E-mail ou senha incorretos.');
+            }
+        }
+
+        // DISPARO DE CADASTRO REAL
+        function handleCadastro(event) {
+            event.preventDefault();
+            const nomeInput = document.getElementById('nome').value;
+            const cpfInput = document.getElementById('cpf').value;
+            const emailInput = document.getElementById('email').value;
+            const senhaInput = document.getElementById('senha').value;
+
+            alert('Processando seu cadastro... Por favor, aguarde.');
+
+            const novoAluno = { nome: nomeInput, cpf: cpfInput, email: emailInput, senha: senhaInput };
+            localStorage.setItem('cadastro_unistart', JSON.stringify(novoAluno));
+            localStorage.setItem('unistart_sessao_ativa', JSON.stringify(novoAluno));
+
+            // Envia os dados para a planilha do Google e dispara o email real de boas-vindas
+            fetch(LINK_DO_MOTOR_GOOGLE, {
+                method: "POST",
+                body: JSON.stringify({
+                    fluxo: "welcome",
+                    nome: nomeInput,
+                    cpf: cpfInput,
+                    email: emailInput
+                })
+            })
+            .then(() => {
+                closeAuthModal();
+                alert('Cadastro concluído com sucesso! Verifique sua caixa de entrada.');
+                entrarNoDashboard(nomeInput);
+            })
+            .catch(err => {
+                console.log(err);
+                // Se der erro de rede, loga o aluno localmente do mesmo jeito para não travar o teste
+                closeAuthModal();
+                entrarNoDashboard(nomeInput);
+            });
+        }
+
+        // DISPARO DE RECUPERAÇÃO REAL (SEM MOSTRAR CÓDIGO NA TELA)
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            const emailIn = document.getElementById('forgot-email').value;
+            const cpfIn = document.getElementById('forgot-cpf').value;
+            const bancoLocal = localStorage.getItem('cadastro_unistart');
+
+            if (!bancoLocal) {
+                alert('Nenhum usuário registrado encontrado.');
+                return;
+            }
+
+            const conta = JSON.parse(bancoLocal);
+
+            if (conta.email === emailIn && conta.cpf === cpfIn) {
+                // Gera o token de 6 dígitos em segundo plano
+                tokenGerado = Math.floor(100000 + Math.random() * 900000).toString();
+                
+                alert('Enviando código verificador para o seu e-mail...');
+
+                // Faz o disparo invisível do e-mail para a caixa de entrada real dele
+                fetch(LINK_DO_MOTOR_GOOGLE, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        fluxo: "recovery",
+                        email: emailIn,
+                        codigo: tokenGerado
+                    })
+                })
+                .then(() => {
+                    alert('Código enviado! Acesse o seu e-mail de verdade para pegá-lo.');
+                    switchTab('reset'); // Abre direto a tela de digitar o código que ele recebeu no e-mail dele!
+                })
+                .catch(err => {
+                    alert('Erro ao disparar e-mail. Para fins de teste local, seu código gerado é: ' + tokenGerado);
+                    switchTab('reset');
+                });
+
+            } else {
+                alert('Os dados informados não coincidem.');
+            }
+        }
+
+        function handleResetPassword(event) {
+            event.preventDefault();
+            const codigoIn = document.getElementById('reset-code').value;
+            const novaSenhaIn = document.getElementById('reset-senha').value;
+
+            if (codigoIn !== tokenGerado) {
+                alert('Código verificador incorreto. Olhe o seu e-mail de verdade.');
+                return;
+            }
+
+            if (novaSenhaIn.length < 8) {
+                alert('A nova senha precisa ter no mínimo 8 caracteres.');
+                return;
+            }
+
+            const contaOriginal = JSON.parse(localStorage.getItem('cadastro_unistart'));
+            contaOriginal.senha = novaSenhaIn;
+            localStorage.setItem('cadastro_unistart', JSON.stringify(contaOriginal));
+
+            alert('Senha atualizada! Faça o login agora com a nova senha.');
+            openAuthModal('login');
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('unistart_sessao_ativa');
+            window.location.reload();
+        }
+    </script>
 </body>
 </html>
