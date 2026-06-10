@@ -704,6 +704,26 @@
             // Dispara visualmente a notificação/Simulação do e-mail com a logo
             document.getElementById('emailSimulation').style.display = 'flex';
         }
-    </script>
+    </script> 
+    <!-- LÓGICA EM JAVASCRIPT -->
+    <script>
+        // Assim que a página carregar, verifica se o usuário já tem cadastro salvo
+        window.onload = function() {
+            const cadastroExistente = localStorage.getItem('cadastro_unistart');
+            
+            if (cadastroExistente) {
+                const dadosAluno = JSON.parse(cadastroExistente);
+                document.getElementById('landing-page-content').style.display = 'none';
+                document.getElementById('dashboard-area').style.display = 'block';
+                document.getElementById('user-display-name').innerText = dadosAluno.nome.split(' ')[0];
+            }
+        };
+
+        // Abre o Modal de Cadastro
+        function openRegisterModal() {
+            document.getElementById('registerModal').classList.add('active');
+        }
+        
+        // ... (o resto das funções que já estavam lá continuam iguais abaixo)
 </body>
 </html>
