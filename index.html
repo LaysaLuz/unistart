@@ -286,6 +286,13 @@
                     <label for="senha">Senha (mínimo 8 caracteres)</label>
                     <input type="password" id="senha" required minlength="8" placeholder="Crie uma senha forte">
                 </div>
+                <!-- Campo de Consentimento LGPD (Colocar antes do botão Concluir Cadastro) -->
+<div class="form-group" style="flex-direction: row; align-items: flex-start; gap: 10px; margin-top: 10px; margin-bottom: 15px;">
+    <input type="checkbox" id="lgpd-consent" required style="width: 20px; height: 20px; cursor: pointer; margin-top: 2px;">
+    <label for="lgpd-consent" style="font-size: 0.8rem; font-weight: 500; color: var(--gray-text); line-height: 1.4; cursor: pointer;">
+        Li e aceito o <strong>Termo de Consentimento de Dados</strong>. Estou ciente de que meu Nome, CPF e E-mail serão coletados e tratados de forma segura e estritamente confidencial, servindo apenas para a validação da minha participação e análise descritiva estatística deste projeto de extensão curricular.
+    </label>
+</div>
                 <button type="submit" class="btn-cta" style="width: 100%;">Concluir Cadastro</button>
                 <div class="toggle-form-link" onclick="switchTab('login')">Já tem uma conta? Faça login aqui</div>
             </form>
