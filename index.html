@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniStart - Plataforma Digital de Apoio Acadêmico</title>
-    <!-- Importação de Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -111,12 +110,12 @@
         .section-header h2::after { content: ''; position: absolute; width: 60px; height: 4px; background-color: var(--turquoise); bottom: -8px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
         .grid-modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .module-card { background-color: var(--bg-light); border-radius: 16px; padding: 30px; border: 1px solid rgba(0,0,0,0.04); transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
+        .module-card { background-color: var(--bg-light); border-radius: 16px; padding: 30px; border: 1px solid rgba(0,0,0,0.04); transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
         .module-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--purple-light); background-color: var(--white); }
         .module-icon { width: 50px; height: 50px; background-color: var(--purple-light); color: var(--purple-main); border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 20px; }
         .module-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
         .module-card p { color: var(--gray-text); font-size: 0.95rem; margin-bottom: 20px; }
-        .module-link { text-decoration: none; color: var(--purple-main); font-weight: 600; font-size: 0.9amp; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+        .module-link { text-decoration: none; color: var(--purple-main); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
 
         /* MODAL DE AUTENTICAÇÃO INTEGRADO */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: var(--transition); }
@@ -144,12 +143,6 @@
         .btn-logout { background: none; border: 1px solid #dc3545; color: #dc3545; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: var(--transition); }
         .btn-logout:hover { background-color: #dc3545; color: var(--white); }
 
-        /* SIMULAÇÃO DE SISTEMA DE EMAIL */
-        .email-simulation-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 3000; display: none; }
-        .email-box { background: #f0f2f5; width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
-        .email-header { background: #ffffff; padding: 15px 20px; border-bottom: 1px solid #e1e4e8; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
-        .email-body { background: #ffffff; margin: 20px; padding: 40px; border-radius: 8px; border: 1px solid #e1e4e8; text-align: center; }
-
         footer { background-color: var(--black-text); color: var(--white); padding: 50px 10% 20px 10%; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; border-bottom: 1px solid #2d2d2d; padding-bottom: 40px; }
         .footer-about h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--turquoise); }
@@ -159,13 +152,11 @@
 </head>
 <body>
 
-    <!-- Topo Institucional -->
     <div class="inst-banner">
         <span><strong>UNISANTA</strong> | Universidade Santa Cecília</span>
         <span>Extensão Curricular — Ano 2026</span>
     </div>
 
-    <!-- Header Principal -->
     <header>
         <a href="#" class="logo-container" onclick="window.location.reload()">
             <div class="logo-play"><i class="fas fa-play"></i></div>
@@ -181,7 +172,6 @@
         </nav>
     </header>
 
-    <!-- LANDING PAGE -->
     <div id="landing-page-content">
         <section class="hero" id="inicio">
             <div class="hero-content">
@@ -230,7 +220,6 @@
         </section>
     </div>
 
-    <!-- AREA INTERNA LOGADA -->
     <main class="dashboard-section" id="dashboard-area">
         <div class="welcome-box">
             <div>
@@ -255,7 +244,6 @@
         </div>
     </main>
 
-    <!-- MODAL DE AUTENTICAÇÃO MÚLTIPLO -->
     <div class="modal-overlay" id="authModal">
         <div class="modal-card">
             <button class="close-modal" onclick="closeAuthModal()">&times;</button>
@@ -265,7 +253,6 @@
                 <div class="modal-tab" id="tab-register" onclick="switchTab('register')">Criar Conta</div>
             </div>
             
-            <!-- FORMULÁRIO DE LOGIN -->
             <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
                 <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Acesse sua conta para continuar seus estudos.</p>
                 <div class="form-group">
@@ -281,7 +268,6 @@
                 <div class="toggle-form-link" onclick="switchTab('register')">Não tem uma conta? Cadastre-se aqui</div>
             </form>
 
-            <!-- FORMULÁRIO DE CADASTRO -->
             <form id="cadastroForm" class="auth-form" onsubmit="handleCadastro(event)">
                 <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Preencha os dados para liberar seu acesso exclusivo.</p>
                 <div class="form-group">
@@ -304,7 +290,6 @@
                 <div class="toggle-form-link" onclick="switchTab('login')">Já tem uma conta? Faça login aqui</div>
             </form>
 
-            <!-- FORMULÁRIO ESQUECEU A SENHA -->
             <form id="forgotForm" class="auth-form" onsubmit="handleForgotPassword(event)">
                 <h3 style="margin-bottom: 10px;">Recuperar Senha</h3>
                 <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Confirme seu E-mail e o CPF cadastrados para receber um código de validação.</p>
@@ -320,7 +305,6 @@
                 <div class="toggle-form-link" onclick="switchTab('login')">Voltar para o Login</div>
             </form>
 
-            <!-- FORMULÁRIO DE RE-DEFINIÇÃO DE SENHA -->
             <form id="resetPasswordForm" class="auth-form" onsubmit="handleResetPassword(event)">
                 <h3 style="margin-bottom: 10px;">Criar Nova Senha</h3>
                 <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Insira o código enviado no seu e-mail e escolha sua nova credencial de acesso.</p>
@@ -334,22 +318,6 @@
                 </div>
                 <button type="submit" class="btn-cta" style="width: 100%; margin-top: 10px;">Atualizar e Logar</button>
             </form>
-        </div>
-    </div>
-
-    <!-- CAIXA SIMULADORA DE NOTIFICAÇÃO DE EMAIL -->
-    <div class="email-simulation-overlay" id="emailSimulation">
-        <div class="email-box">
-            <div class="email-header">
-                <div>
-                    <span style="font-weight: bold;">De:</span> seguranca@unistart.com.br<br>
-                    <span style="font-weight: bold;">Para:</span> <span id="email-destinatario">aluno@email.com</span>
-                </div>
-                <button class="btn-cta" style="padding: 5px 15px; font-size: 0.8rem;" id="btn-fechar-email" onclick="closeEmailSimulation()">Fechar Notificação</button>
-            </div>
-            <div class="email-body" id="email-dinamico-content">
-                <!-- Conteúdo montado via JS dependendo do tipo de disparo -->
-            </div>
         </div>
     </div>
 
@@ -371,212 +339,11 @@
         <div class="footer-bottom">&copy; 2026 Universidade Santa Cecília (UNISANTA). Todos os direitos reservados.</div>
     </footer>
 
-    <!-- LOGICA JAVASCRIPT EXPANDIDA -->
     <script>
-        let tokenGerado = "";
-        let emailDestinoTemp = "";
-        let fluxoEmailAtual = "welcome"; // Pode ser "welcome" ou "recovery"
-
-        window.onload = function() {
-            const usuarioLogado = localStorage.getItem('unistart_sessao_ativa');
-            if (usuarioLogado) {
-                const dados = JSON.parse(usuarioLogado);
-                entrarNoDashboard(dados.nome);
-            }
-        };
-
-        function openAuthModal(mode) {
-            document.getElementById('authModal').classList.add('active');
-            switchTab(mode);
-        }
-
-        function closeAuthModal() {
-            document.getElementById('authModal').classList.remove('active');
-        }
-
-        function switchTab(mode) {
-            document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
-            document.getElementById('modal-tabs-header').style.display = 'flex';
-            
-            if (mode === 'login') {
-                document.getElementById('tab-login').classList.add('active');
-                document.getElementById('loginForm').classList.add('active');
-            } else if (mode === 'register') {
-                document.getElementById('tab-register').classList.add('active');
-                document.getElementById('cadastroForm').classList.add('active');
-            } else if (mode === 'forgot') {
-                document.getElementById('modal-tabs-header').style.display = 'none'; // Esconde abas na recuperação
-                document.getElementById('forgotForm').classList.add('active');
-            } else if (mode === 'reset') {
-                document.getElementById('modal-tabs-header').style.display = 'none';
-                document.getElementById('resetPasswordForm').classList.add('active');
-            }
-        }
-
-        function mascaraCPF(input) {
-            let v = input.value.replace(/\D/g, "");
-            v = v.replace(/(\d{3})(\d)/, "$1.$2");
-            v = v.replace(/(\d{3})(\d)/, "$1.$2");
-            v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-            input.value = v;
-        }
-
-        function entrarNoDashboard(nomeCompleto) {
-            document.getElementById('landing-page-content').style.display = 'none';
-            document.getElementById('dashboard-area').style.display = 'block';
-            document.getElementById('user-display-name').innerText = nomeCompleto.split(' ')[0];
-            document.getElementById('nav-menu').style.display = 'none';
-        }
-
-        function handleLogin(event) {
-            event.preventDefault();
-            const emailIn = document.getElementById('login-email').value;
-            const senhaIn = document.getElementById('login-senha').value;
-            const bancoLocal = localStorage.getItem('cadastro_unistart');
-
-            if (!bancoLocal) {
-                alert('Nenhum usuário cadastrado neste navegador. Clique em "Criar Conta"!');
-                return;
-            }
-
-            const contaExistente = JSON.parse(bancoLocal);
-
-            if (contaExistente.email === emailIn && contaExistente.senha === senhaIn) {
-                localStorage.setItem('unistart_sessao_ativa', JSON.stringify(contaExistente));
-                closeAuthModal();
-                entrarNoDashboard(contaExistente.nome);
-            } else {
-                alert('E-mail ou senha incorretos. Caso tenha esquecido, clique em "Esqueceu a senha?"');
-            }
-        }
-
-        function handleCadastro(event) {
-            event.preventDefault();
-            const nomeInput = document.getElementById('nome').value;
-            const cpfInput = document.getElementById('cpf').value;
-            const emailInput = document.getElementById('email').value;
-            const senhaInput = document.getElementById('senha').value;
-
-            const novoAluno = { nome: nomeInput, cpf: cpfInput, email: emailInput, senha: senhaInput };
-
-            localStorage.setItem('cadastro_unistart', JSON.stringify(novoAluno));
-            localStorage.setItem('unistart_sessao_ativa', JSON.stringify(novoAluno));
-
-            fluxoEmailAtual = "welcome";
-            document.getElementById('email-destinatario').innerText = emailInput;
-            
-            // Renderiza o template de Boas-vindas com a Logo
-            document.getElementById('email-dinamico-content').innerHTML = `
-                <div class="logo-container" style="justify-content: center; margin-bottom: 25px;">
-                    <div class="logo-play"><i class="fas fa-play"></i></div>
-                    <div class="logo-text">Uni<span>Start</span></div>
-                </div>
-                <h1 style="font-size: 1.6rem; margin-bottom: 15px;">Seja bem-vindo ao UniStart!</h1>
-                <p style="color: var(--gray-text); margin-bottom: 20px;">Olá, <strong>${nomeInput}</strong>. Sua jornada rumo ao sucesso no Ensino Superior começou oficialmente!</p>
-                <p style="color: var(--gray-text); font-size: 0.9rem;">Explore nossos módulos de planejamento de carreira, LinkedIn e portfólio digital.</p>
-            `;
-            
-            closeAuthModal();
-            document.getElementById('emailSimulation').style.display = 'flex';
-        }
-
-        // LÓGICA DE VALIDAÇÃO DE ESQUECEU A SENHA
-        function handleForgotPassword(event) {
-            event.preventDefault();
-            const emailIn = document.getElementById('forgot-email').value;
-            const cpfIn = document.getElementById('forgot-cpf').value;
-            const bancoLocal = localStorage.getItem('cadastro_unistart');
-
-            if (!bancoLocal) {
-                alert('Nenhuma base de dados encontrada neste navegador.');
-                return;
-            }
-
-            const conta = JSON.parse(bancoLocal);
-
-            // Validação Cruzada: Verifica se o email E o CPF combinam com a mesma conta
-            if (conta.email === emailIn && conta.cpf === cpfIn) {
-                // Gera token de 6 dígitos aleatórios
-                tokenGerado = Math.floor(100000 + Math.random() * 900000).toString();
-                emailDestinoTemp = emailIn;
-                fluxoEmailAtual = "recovery";
-
-                document.getElementById('email-destinatario').innerText = emailIn;
-                
-                // Renderiza o template de Recuperação de Senha com a Logo
-                document.getElementById('email-dinamico-content').innerHTML = `
-                    <div class="logo-container" style="justify-content: center; margin-bottom: 25px;">
-                        <div class="logo-play"><i class="fas fa-play"></i></div>
-                        <div class="logo-text">Uni<span>Start</span></div>
-                    </div>
-                    <h1 style="font-size: 1.5rem; margin-bottom: 15px; color: #dc3545;">Código de Recuperação de Conta</h1>
-                    <p style="color: var(--gray-text); margin-bottom: 20px;">Olá! Detectamos uma solicitação de redefinição de acesso para a sua conta UniStart.</p>
-                    <div style="background-color: var(--purple-light); color: var(--purple-main); font-size: 2rem; font-weight: bold; padding: 15px; border-radius: 12px; letter-spacing: 6px; display: inline-block; margin-bottom: 20px; border: 2px dashed var(--purple-main); width: 220px;">
-                        ${tokenGerado}
-                    </div>
-                    <p style="color: var(--gray-text); font-size: 0.85rem;">Insira este código na plataforma para criar uma nova senha com segurança.</p>
-                `;
-
-                closeAuthModal();
-                document.getElementById('emailSimulation').style.display = 'flex';
-            } else {
-                alert('Os dados informados (E-mail e CPF) não coincidem com nenhum cadastro ativo. Verifique as informações.');
-            }
-        }
-
-        // SALVAR A NOVA SENHA ATUALIZADA
-        function handleResetPassword(event) {
-            event.preventDefault();
-            const codigoIn = document.getElementById('reset-code').value;
-            const novaSenhaIn = document.getElementById('reset-senha').value;
-
-            if (codigoIn !== tokenGerado) {
-                alert('Código verificador incorreto. Verifique a notificação de e-mail e tente de novo.');
-                return;
-            }
-
-            if (novaSenhaIn.length < 8) {
-                alert('Para segurança do aluno, a senha precisa conter pelo menos 8 dígitos.');
-                return;
-            }
-
-            // Puxa do banco, edita a propriedade senha e grava de volta
-            const contaOriginal = JSON.parse(localStorage.getItem('cadastro_unistart'));
-            contaOriginal.senha = novaSenhaIn;
-            localStorage.setItem('cadastro_unistart', JSON.stringify(contaOriginal));
-
-            alert('Senha atualizada com sucesso! Seu novo acesso já está ativo.');
-            
-            // Limpa os campos do formulário para próximos testes
-            document.getElementById('reset-code').value = "";
-            document.getElementById('reset-senha').value = "";
-            
-            openAuthModal('login'); // Leva o usuário de volta para fazer login com a senha nova
-        }
-
-        function closeEmailSimulation() {
-            document.getElementById('emailSimulation').style.display = 'none';
-            
-            if (fluxoEmailAtual === "welcome") {
-                const dados = JSON.parse(localStorage.getItem('unistart_sessao_ativa'));
-                entrarNoDashboard(dados.nome);
-            } else if (fluxoEmailAtual === "recovery") {
-                openAuthModal('reset'); // Se veio do fluxo de recuperar, joga ele na tela de digitar o código
-            }
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function handleLogout() {
-            localStorage.removeItem('unistart_sessao_ativa');
-            window.location.reload();
-        }
-    </script>
-        // COLE AQUI A URL QUE VOCÊ COPIOU NA ETAPA 1
+        // Endpoint oficial do seu Google Apps Script (Sua API do Sheets)
         const LINK_DO_MOTOR_GOOGLE = "https://script.google.com/macros/s/AKfycbyZJHhOCHv7ZLhvD-7p7xWFG2N0a-yGm-pq0EBMdyKX4OKv0odWoKCHgtfFbTHNbHy8/exec";
 
         let tokenGerado = "";
-        let emailDestinoTemp = "";
 
         window.onload = function() {
             const usuarioLogado = localStorage.getItem('unistart_sessao_ativa');
@@ -652,7 +419,7 @@
             }
         }
 
-        // DISPARO DE CADASTRO REAL
+        // CADASTRO DE ESTUDANTE (ENVIANDO DIRETO PARA PLANILHA E GMAIL EM SEGUNDO PLANO)
         function handleCadastro(event) {
             event.preventDefault();
             const nomeInput = document.getElementById('nome').value;
@@ -660,15 +427,17 @@
             const emailInput = document.getElementById('email').value;
             const senhaInput = document.getElementById('senha').value;
 
-            alert('Processando seu cadastro... Por favor, aguarde.');
+            alert('Processando sua inscrição... Aguarde alguns instantes.');
 
             const novoAluno = { nome: nomeInput, cpf: cpfInput, email: emailInput, senha: senhaInput };
             localStorage.setItem('cadastro_unistart', JSON.stringify(novoAluno));
             localStorage.setItem('unistart_sessao_ativa', JSON.stringify(novoAluno));
 
-            // Envia os dados para a planilha do Google e dispara o email real de boas-vindas
+            // Dispara requisição assíncrona para o Google Workspace do grupo
             fetch(LINK_DO_MOTOR_GOOGLE, {
                 method: "POST",
+                mode: "no-cors", 
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     fluxo: "welcome",
                     nome: nomeInput,
@@ -678,18 +447,17 @@
             })
             .then(() => {
                 closeAuthModal();
-                alert('Cadastro concluído com sucesso! Verifique sua caixa de entrada.');
+                alert('Inscrição confirmada com sucesso! Seu e-mail de boas-vindas foi enviado.');
                 entrarNoDashboard(nomeInput);
             })
             .catch(err => {
                 console.log(err);
-                // Se der erro de rede, loga o aluno localmente do mesmo jeito para não travar o teste
                 closeAuthModal();
                 entrarNoDashboard(nomeInput);
             });
         }
 
-        // DISPARO DE RECUPERAÇÃO REAL (SEM MOSTRAR CÓDIGO NA TELA)
+        // RECUPERAÇÃO DE CONTA (ENVIA TOKEN POR EMAIL E NÃO EXIBE NADA NA TELA)
         function handleForgotPassword(event) {
             event.preventDefault();
             const emailIn = document.getElementById('forgot-email').value;
@@ -697,21 +465,23 @@
             const bancoLocal = localStorage.getItem('cadastro_unistart');
 
             if (!bancoLocal) {
-                alert('Nenhum usuário registrado encontrado.');
+                alert('Nenhum usuário registrado encontrado neste navegador.');
                 return;
             }
 
             const conta = JSON.parse(bancoLocal);
 
             if (conta.email === emailIn && conta.cpf === cpfIn) {
-                // Gera o token de 6 dígitos em segundo plano
+                // Cria o token numérico invisível de 6 dígitos
                 tokenGerado = Math.floor(100000 + Math.random() * 900000).toString();
                 
-                alert('Enviando código verificador para o seu e-mail...');
+                alert('Gerando código de segurança... O token será enviado para a sua caixa de entrada.');
 
-                // Faz o disparo invisível do e-mail para a caixa de entrada real dele
+                // Despacha o e-mail real com o token
                 fetch(LINK_DO_MOTOR_GOOGLE, {
                     method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         fluxo: "recovery",
                         email: emailIn,
@@ -720,15 +490,15 @@
                 })
                 .then(() => {
                     alert('Código enviado! Acesse o seu e-mail de verdade para pegá-lo.');
-                    switchTab('reset'); // Abre direto a tela de digitar o código que ele recebeu no e-mail dele!
+                    switchTab('reset'); // Altera a aba do formulário para a de redefinição
                 })
                 .catch(err => {
-                    alert('Erro ao disparar e-mail. Para fins de teste local, seu código gerado é: ' + tokenGerado);
+                    console.log(err);
+                    alert('Ocorreu um erro no servidor de e-mail, mas para fins de testes rápidos do seu grupo, o código gerado foi: ' + tokenGerado);
                     switchTab('reset');
                 });
-
             } else {
-                alert('Os dados informados não coincidem.');
+                alert('Atenção: Os dados informados de E-mail e CPF não coincidem.');
             }
         }
 
@@ -738,12 +508,12 @@
             const novaSenhaIn = document.getElementById('reset-senha').value;
 
             if (codigoIn !== tokenGerado) {
-                alert('Código verificador incorreto. Olhe o seu e-mail de verdade.');
+                alert('Código inválido. Digite exatamente os 6 dígitos recebidos no e-mail.');
                 return;
             }
 
             if (novaSenhaIn.length < 8) {
-                alert('A nova senha precisa ter no mínimo 8 caracteres.');
+                alert('A nova senha de acesso deve conter pelo menos 8 dígitos.');
                 return;
             }
 
@@ -751,7 +521,7 @@
             contaOriginal.senha = novaSenhaIn;
             localStorage.setItem('cadastro_unistart', JSON.stringify(contaOriginal));
 
-            alert('Senha atualizada! Faça o login agora com a nova senha.');
+            alert('Excelente! Senha atualizada com sucesso. Faça o login utilizando suas novas credenciais.');
             openAuthModal('login');
         }
 
