@@ -51,9 +51,7 @@
             border-bottom: 3px solid var(--turquoise);
         }
 
-        .inst-banner span strong {
-            color: var(--turquoise);
-        }
+        .inst-banner span strong { color: var(--turquoise); }
 
         /* Header e Navegação */
         header {
@@ -68,12 +66,7 @@
             z-index: 1000;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
+        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 
         /* Logo com Símbolo de Play */
         .logo-play {
@@ -90,333 +83,77 @@
             box-shadow: 0 4px 10px rgba(0, 206, 209, 0.3);
         }
 
-        .logo-text {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--black-text);
-            letter-spacing: -0.5px;
-        }
+        .logo-text { font-size: 1.6rem; font-weight: 700; color: var(--black-text); letter-spacing: -0.5px; }
+        .logo-text span { color: var(--purple-main); }
 
-        .logo-text span {
-            color: var(--purple-main);
-        }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--black-text); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+        nav ul li a:hover { color: var(--purple-main); }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
+        .btn-login { background: none; border: 2px solid var(--purple-main); color: var(--purple-main); padding: 8px 18px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: var(--transition); }
+        .btn-login:hover { background-color: var(--purple-light); }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--black-text);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover {
-            color: var(--purple-main);
-        }
-
-        .btn-cta {
-            background-color: var(--purple-main);
-            color: var(--white) !important;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-        }
-
-        .btn-cta:hover {
-            background-color: var(--purple-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
-        }
+        .btn-cta { background-color: var(--purple-main); color: var(--white) !important; padding: 10px 20px; border-radius: 30px; transition: var(--transition); border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .btn-cta:hover { background-color: var(--purple-dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3); }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--white) 60%, var(--purple-light) 100%);
-            padding: 80px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero-tag {
-            background-color: var(--turquoise-light);
-            color: var(--turquoise-dark);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--black-text);
-        }
-
-        .hero h1 span {
-            background: linear-gradient(to right, var(--purple-main), var(--turquoise-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--gray-text);
-            margin-bottom: 30px;
-        }
+        .hero { background: linear-gradient(135deg, var(--white) 60%, var(--purple-light) 100%); padding: 80px 10%; display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+        .hero-content { max-width: 600px; }
+        .hero-tag { background-color: var(--turquoise-light); color: var(--turquoise-dark); padding: 6px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+        .hero h1 { font-size: 2.8rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: var(--black-text); }
+        .hero h1 span { background: linear-gradient(to right, var(--purple-main), var(--turquoise-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.1rem; color: var(--gray-text); margin-bottom: 30px; }
 
         /* Seção dos Módulos */
-        .modules-section {
-            padding: 80px 10%;
-            background-color: var(--white);
-        }
+        .modules-section { padding: 80px 10%; background-color: var(--white); }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
+        .section-header h2 { font-size: 2.2rem; margin-bottom: 15px; position: relative; display: inline-block; }
+        .section-header h2::after { content: ''; position: absolute; width: 60px; height: 4px; background-color: var(--turquoise); bottom: -8px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
 
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px auto;
-        }
+        .grid-modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .module-card { background-color: var(--bg-light); border-radius: 16px; padding: 30px; border: 1px solid rgba(0,0,0,0.04); transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
+        .module-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--purple-light); background-color: var(--white); }
+        .module-icon { width: 50px; height: 50px; background-color: var(--purple-light); color: var(--purple-main); border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .module-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+        .module-card p { color: var(--gray-text); font-size: 0.95rem; margin-bottom: 20px; }
+        .module-link { text-decoration: none; color: var(--purple-main); font-weight: 600; font-size: 0.9amp; display: flex; align-items: center; gap: 8px; cursor: pointer; }
 
-        .section-header h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
+        /* MODAL DE AUTENTICAÇÃO INTEGRADO */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: var(--transition); }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-card { background-color: var(--white); padding: 40px; border-radius: 24px; width: 100%; max-width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); position: relative; transform: scale(0.9); transition: var(--transition); }
+        .modal-overlay.active .modal-card { transform: scale(1); }
+        .close-modal { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray-text); }
+        
+        .modal-tabs { display: flex; border-bottom: 2px solid #e9ecef; margin-bottom: 25px; gap: 20px; }
+        .modal-tab { padding-bottom: 10px; font-weight: 700; font-size: 1.1rem; color: var(--gray-text); cursor: pointer; border-bottom: 3px solid transparent; transition: var(--transition); }
+        .modal-tab.active { color: var(--purple-main); border-bottom-color: var(--purple-main); }
+        
+        .form-group { margin-bottom: 18px; display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--black-text); }
+        .form-group input { padding: 12px 16px; border: 2px solid #e9ecef; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--black-text); transition: var(--transition); }
+        .form-group input:focus { outline: none; border-color: var(--purple-main); }
+        
+        .auth-form { display: none; }
+        .auth-form.active { display: block; }
+        .toggle-form-link { text-align: center; font-size: 0.85rem; color: var(--purple-main); cursor: pointer; margin-top: 15px; font-weight: 600; display: block; }
 
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 4px;
-            background-color: var(--turquoise);
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
+        /* TELA DE DASHBOARD INTERNO */
+        .dashboard-section { display: none; padding: 60px 10%; background-color: var(--bg-light); min-height: 80vh; }
+        .welcome-box { background: var(--white); padding: 30px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 40px; border-left: 6px solid var(--turquoise); display: flex; justify-content: space-between; align-items: center; }
+        .btn-logout { background: none; border: 1px solid #dc3545; color: #dc3545; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: var(--transition); }
+        .btn-logout:hover { background-color: #dc3545; color: var(--white); }
 
-        .grid-modules {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        /* SIMULAÇÃO DE SISTEMA DE EMAIL */
+        .email-simulation-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 3000; display: none; }
+        .email-box { background: #f0f2f5; width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .email-header { background: #ffffff; padding: 15px 20px; border-bottom: 1px solid #e1e4e8; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+        .email-body { background: #ffffff; margin: 20px; padding: 40px; border-radius: 8px; border: 1px solid #e1e4e8; text-align: center; }
 
-        .module-card {
-            background-color: var(--bg-light);
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .module-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-            border-color: var(--purple-light);
-            background-color: var(--white);
-        }
-
-        .module-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--purple-light);
-            color: var(--purple-main);
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .module-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-
-        .module-card p {
-            color: var(--gray-text);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .module-link {
-            text-decoration: none;
-            color: var(--purple-main);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        /* Seção de Ciência de Dados */
-        .data-section {
-            padding: 80px 10%;
-            background-color: var(--bg-light);
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .data-content { flex: 1; min-width: 300px; }
-        .data-visual {
-            flex: 1; min-width: 300px; background: var(--white); padding: 40px; border-radius: 24px; box-shadow: var(--shadow); border-left: 6px solid var(--purple-main);
-        }
-
-        .mock-chart { display: flex; flex-direction: column; gap: 15px; }
-        .chart-bar-wrapper { width: 100%; }
-        .chart-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; }
-        .chart-bar-bg { background-color: #e9ecef; height: 12px; border-radius: 6px; overflow: hidden; }
-        .chart-bar-fill { height: 100%; background: linear-gradient(to right, var(--purple-main), var(--turquoise)); border-radius: 6px; }
-
-        /* MODAL DE CADASTRO */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 2000;
-            opacity: 0; pointer-events: none;
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active {
-            opacity: 1; pointer-events: auto;
-        }
-
-        .modal-card {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 24px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-            transform: scale(0.9);
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active .modal-card {
-            transform: scale(1);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px; right: 20px;
-            background: none; border: none;
-            font-size: 1.5rem; cursor: pointer; color: var(--gray-text);
-        }
-
-        .modal-card h2 {
-            font-size: 1.8rem; margin-bottom: 10px; text-align: center;
-        }
-
-        .modal-card p {
-            text-align: center; color: var(--gray-text); font-size: 0.9rem; margin-bottom: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-            display: flex; flex-direction: column; gap: 6px;
-        }
-
-        .form-group label {
-            font-size: 0.85rem; font-weight: 600; color: var(--black-text);
-        }
-
-        .form-group input {
-            padding: 12px 16px;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            color: var(--black-text);
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none; border-color: var(--purple-main);
-        }
-
-        /* TELA DE DASHBOARD INTERNO (Pós-login) */
-        .dashboard-section {
-            display: none;
-            padding: 60px 10%;
-            background-color: var(--bg-light);
-            min-height: 80vh;
-        }
-
-        .welcome-box {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-            border-left: 6px solid var(--turquoise);
-        }
-
-        /* SIMULAÇÃO DE CAIXA DE EMAIL RECEBIDO */
-        .email-simulation-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 3000;
-            display: none;
-        }
-
-        .email-box {
-            background: #f0f2f5;
-            width: 100%; max-width: 600px;
-            border-radius: 12px; overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        .email-header {
-            background: #ffffff; padding: 15px 20px;
-            border-bottom: 1px solid #e1e4e8;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .email-body {
-            background: #ffffff; margin: 20px; padding: 40px;
-            border-radius: 8px; border: 1px solid #e1e4e8;
-            text-align: center;
-        }
-
-        /* Footer / Rodapé */
         footer { background-color: var(--black-text); color: var(--white); padding: 50px 10% 20px 10%; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; border-bottom: 1px solid #2d2d2d; padding-bottom: 40px; }
         .footer-about h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--turquoise); }
         .footer-about p { color: #b3b3b3; font-size: 0.9rem; }
-        .footer-team h4 { font-size: 1.2rem; margin-bottom: 15px; }
-        .footer-team ul { list-style: none; display: flex; flex-direction: column; gap: 10px; color: #b3b3b3; font-size: 0.9rem; }
         .footer-bottom { padding-top: 20px; text-align: center; font-size: 0.8rem; color: #777777; }
     </style>
 </head>
@@ -435,23 +172,23 @@
             <div class="logo-text">Uni<span>Start</span></div>
         </a>
         <nav>
-            <ul>
-                <li><a href="#inicio" id="nav-inicio">Início</a></li>
-                <li><a href="#trilhas" id="nav-trilhas">Trilhas</a></li>
-                <li><a href="#cadastro" class="btn-cta" onclick="openRegisterModal()">Acessar Plataforma</a></li>
+            <ul id="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#trilhas">Trilhas</a></li>
+                <li><button class="btn-login" onclick="openAuthModal('login')">Entrar</button></li>
+                <li><button class="btn-cta" onclick="openAuthModal('register')">Criar Conta</button></li>
             </ul>
         </nav>
     </header>
 
-    <!-- CONTEÚDO DA LANDING PAGE (Visível antes do Cadastro) -->
+    <!-- LANDING PAGE -->
     <div id="landing-page-content">
-        <!-- Seção Hero -->
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <div class="hero-tag">Conectando Futuros</div>
                 <h1>Apoio na transição para o <span>Ensino Superior</span></h1>
                 <p>Centralizamos ferramentas, planejamentos e trilhas de capacitação para que a sua jornada acadêmica comece de forma estruturada, consciente e focada no sucesso profissional.</p>
-                <button class="btn-cta" onclick="openRegisterModal()">Explorar Trilhas</button>
+                <button class="btn-cta" onclick="openAuthModal('register')">Explorar Trilhas</button>
             </div>
             <div style="flex: 1; display: flex; justify-content: center;">
                 <svg width="260" height="260" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -467,75 +204,45 @@
             </div>
         </section>
 
-        <!-- Seção de Trilhas -->
         <section class="modules-section" id="trilhas">
             <div class="section-header">
                 <h2>Nossas Trilhas de Aprendizagem</h2>
                 <p>Módulos estruturados para desenvolver as competências mais demandadas pelo ambiente universitário.</p>
             </div>
-
             <div class="grid-modules">
-                <div class="module-card">
+                <div class="module-card" onclick="openAuthModal('login')">
                     <div>
                         <div class="module-icon"><i class="fas fa-university"></i></div>
                         <h3>Vida Universitária</h3>
                         <p>Apresentação do contexto do Ensino Superior, rotina acadêmica, adaptação e organização primária.</p>
                     </div>
-                    <span class="module-link" onclick="openRegisterModal()">Iniciar Trilha <i class="fas fa-arrow-right"></i></span>
+                    <span class="module-link">Iniciar Trilha <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div class="module-card">
+                <div class="module-card" onclick="openAuthModal('login')">
                     <div>
                         <div class="module-icon"><i class="fas fa-file-alt"></i></div>
                         <h3>Currículo Profissional</h3>
                         <p>Orientações práticas para a estruturação do primeiro currículo, organização de experiências e cursos.</p>
                     </div>
-                    <span class="module-link" onclick="openRegisterModal()">Iniciar Trilha <i class="fas fa-arrow-right"></i></span>
-                </div>
-                <div class="module-card">
-                    <div>
-                        <div class="module-icon"><i class="fab fa-linkedin"></i></div>
-                        <h3>LinkedIn & Networking</h3>
-                        <p>Criação de perfil profissional digital estratégico, técnicas de conexões e consolidação de marca pessoal.</p>
-                    </div>
-                    <span class="module-link" onclick="openRegisterModal()">Iniciar Trilha <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Ciência de Dados -->
-        <section class="data-section">
-            <div class="data-content">
-                <h2>Indicadores Inteligentes e Diagnóstico</h2>
-                <p>Integramos formulários diagnósticos para mapear as maiores dores, interesses e dúvidas de quem está ingressando na faculdade, refinando o conteúdo continuamente.</p>
-            </div>
-            <div class="data-visual">
-                <div class="mock-chart">
-                    <div class="chart-bar-wrapper">
-                        <div class="chart-label"><span>Dificuldade em Organização do Tempo</span> <span>78%</span></div>
-                        <div class="chart-bar-bg"><div class="chart-bar-fill" style="width: 78%;"></div></div>
-                    </div>
-                    <div class="chart-bar-wrapper">
-                        <div class="chart-label"><span>Dúvidas sobre Bolsas e Estágios</span> <span>89%</span></div>
-                        <div class="chart-bar-bg"><div class="chart-bar-fill" style="width: 89%;"></div></div>
-                    </div>
+                    <span class="module-link">Iniciar Trilha <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- TELA DO ACESSO INTERNO (DASHBOARD DAS TRILHAS DE VERDADE) -->
+    <!-- AREA INTERNA LOGADA -->
     <main class="dashboard-section" id="dashboard-area">
         <div class="welcome-box">
-            <h2>Olá, <span id="user-display-name">Estudante</span>! 👋</h2>
-            <p>Seu cadastro foi realizado com sucesso. Agora você tem acesso irrestrito ao ambiente interno da plataforma UniStart.</p>
+            <div>
+                <h2>Olá, <span id="user-display-name">Estudante</span>! 👋</h2>
+                <p>Você está conectado à sua conta UniStart.</p>
+            </div>
+            <button class="btn-logout" onclick="handleLogout()">Sair da Conta</button>
         </div>
-
         <div class="section-header" style="text-align: left; margin-bottom: 30px;">
             <h2>Sua Jornada de Conhecimento</h2>
             <p>Selecione um dos módulos abaixo para iniciar suas aulas digitais:</p>
         </div>
-
-        <!-- Aqui entram as trilhas de verdade quando eles logam -->
         <div class="grid-modules">
             <div class="module-card" style="background: var(--white);">
                 <div>
@@ -545,25 +252,38 @@
                 </div>
                 <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
             </div>
-            <div class="module-card" style="background: var(--white);">
-                <div>
-                    <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
-                    <h3>[Módulo 2] Oficina de Currículo</h3>
-                    <p>Templates para download e passo a passo completo para preencher o seu primeiro currículo profissional.</p>
-                </div>
-                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
-            </div>
         </div>
     </main>
 
-    <!-- MODAL DE CADASTRO POP-UP -->
-    <div class="modal-overlay" id="registerModal">
+    <!-- MODAL DE AUTENTICAÇÃO MÚLTIPLO -->
+    <div class="modal-overlay" id="authModal">
         <div class="modal-card">
-            <button class="close-modal" onclick="closeRegisterModal()">&times;</button>
-            <h2>Crie sua Conta</h2>
-            <p>Preencha os campos abaixo para liberar seu acesso às trilhas exclusivas.</p>
+            <button class="close-modal" onclick="closeAuthModal()">&times;</button>
             
-            <form id="cadastroForm" onsubmit="handleCadastro(event)">
+            <div class="modal-tabs" id="modal-tabs-header">
+                <div class="modal-tab" id="tab-login" onclick="switchTab('login')">Entrar</div>
+                <div class="modal-tab" id="tab-register" onclick="switchTab('register')">Criar Conta</div>
+            </div>
+            
+            <!-- FORMULÁRIO DE LOGIN -->
+            <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Acesse sua conta para continuar seus estudos.</p>
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" required placeholder="seuemail@exemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-senha">Senha</label>
+                    <input type="password" id="login-senha" required placeholder="Digite sua senha">
+                </div>
+                <span class="toggle-form-link" style="text-align: right; margin-top: -5px; margin-bottom: 15px;" onclick="switchTab('forgot')">Esqueceu a senha?</span>
+                <button type="submit" class="btn-cta" style="width: 100%;">Entrar na Plataforma</button>
+                <div class="toggle-form-link" onclick="switchTab('register')">Não tem uma conta? Cadastre-se aqui</div>
+            </form>
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+            <form id="cadastroForm" class="auth-form" onsubmit="handleCadastro(event)">
+                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Preencha os dados para liberar seu acesso exclusivo.</p>
                 <div class="form-group">
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" required placeholder="Digite seu nome completo">
@@ -580,73 +300,120 @@
                     <label for="senha">Senha (mínimo 8 caracteres)</label>
                     <input type="password" id="senha" required minlength="8" placeholder="Crie uma senha forte">
                 </div>
-                <button type="submit" class="btn-cta" style="width: 100%; margin-top: 10px;">Concluir Cadastro</button>
+                <button type="submit" class="btn-cta" style="width: 100%;">Concluir Cadastro</button>
+                <div class="toggle-form-link" onclick="switchTab('login')">Já tem uma conta? Faça login aqui</div>
+            </form>
+
+            <!-- FORMULÁRIO ESQUECEU A SENHA -->
+            <form id="forgotForm" class="auth-form" onsubmit="handleForgotPassword(event)">
+                <h3 style="margin-bottom: 10px;">Recuperar Senha</h3>
+                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Confirme seu E-mail e o CPF cadastrados para receber um código de validação.</p>
+                <div class="form-group">
+                    <label for="forgot-email">E-mail Cadastrado</label>
+                    <input type="email" id="forgot-email" required placeholder="seuemail@exemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="forgot-cpf">CPF Cadastrado</label>
+                    <input type="text" id="forgot-cpf" required placeholder="000.000.000-00" maxlength="14" oninput="mascaraCPF(this)">
+                </div>
+                <button type="submit" class="btn-cta" style="width: 100%; margin-top: 10px;">Enviar Código de Acesso</button>
+                <div class="toggle-form-link" onclick="switchTab('login')">Voltar para o Login</div>
+            </form>
+
+            <!-- FORMULÁRIO DE RE-DEFINIÇÃO DE SENHA -->
+            <form id="resetPasswordForm" class="auth-form" onsubmit="handleResetPassword(event)">
+                <h3 style="margin-bottom: 10px;">Criar Nova Senha</h3>
+                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Insira o código enviado no seu e-mail e escolha sua nova credencial de acesso.</p>
+                <div class="form-group">
+                    <label for="reset-code">Código Verificador de 6 Dígitos</label>
+                    <input type="text" id="reset-code" required maxlength="6" style="text-align: center; letter-spacing: 4px; font-weight: bold;" placeholder="000000">
+                </div>
+                <div class="form-group">
+                    <label for="reset-senha">Nova Senha (mínimo 8 caracteres)</label>
+                    <input type="password" id="reset-senha" required minlength="8" placeholder="Digite sua nova senha">
+                </div>
+                <button type="submit" class="btn-cta" style="width: 100%; margin-top: 10px;">Atualizar e Logar</button>
             </form>
         </div>
     </div>
 
-    <!-- POP-UP DE SIMULAÇÃO DE E-MAIL RECEBIDO (BOAS-VINDAS) -->
+    <!-- CAIXA SIMULADORA DE NOTIFICAÇÃO DE EMAIL -->
     <div class="email-simulation-overlay" id="emailSimulation">
         <div class="email-box">
             <div class="email-header">
                 <div>
-                    <span style="font-weight: bold; color: var(--black-text);">De:</span> contato@unistart.com.br<br>
-                    <span style="font-weight: bold; color: var(--black-text);">Para:</span> <span id="email-destinatario">aluno@email.com</span>
+                    <span style="font-weight: bold;">De:</span> seguranca@unistart.com.br<br>
+                    <span style="font-weight: bold;">Para:</span> <span id="email-destinatario">aluno@email.com</span>
                 </div>
-                <button class="btn-cta" style="padding: 5px 15px; font-size: 0.8rem;" onclick="closeEmailSimulation()">Fechar Notificação</button>
+                <button class="btn-cta" style="padding: 5px 15px; font-size: 0.8rem;" id="btn-fechar-email" onclick="closeEmailSimulation()">Fechar Notificação</button>
             </div>
-            <div class="email-body">
-                <!-- LOGO DENTRO DO EMAIL -->
-                <div class="logo-container" style="justify-content: center; margin-bottom: 25px;">
-                    <div class="logo-play"><i class="fas fa-play"></i></div>
-                    <div class="logo-text">Uni<span>Start</span></div>
-                </div>
-                
-                <h1 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black-text);">Seja bem-vindo ao UniStart!</h1>
-                <p style="color: var(--gray-text); font-size: 1rem; margin-bottom: 20px;">Olá, <strong id="email-nome-aluno">Estudante</strong>. Sua jornada rumo ao sucesso no Ensino Superior começou oficialmente!</p>
-                <p style="color: var(--gray-text); font-size: 0.9rem; margin-bottom: 30px;">Sua conta está ativa. Explore nossos módulos de planejamento de carreira, LinkedIn, portfólio digital e muito mais.</p>
-                
-                <div style="border-top: 1px solid #e1e4e8; padding-top: 15px; font-size: 0.8rem; color: #999;">
-                    Este é um e-mail automático do Projeto de Extensão — Ciência de Dados UNISANTA.
-                </div>
+            <div class="email-body" id="email-dinamico-content">
+                <!-- Conteúdo montado via JS dependendo do tipo de disparo -->
             </div>
         </div>
     </div>
 
-    <!-- Rodapé -->
     <footer>
         <div class="footer-grid">
             <div class="footer-about">
                 <h4>UniStart</h4>
-                <p>Projeto de Extensão Curricular focado em mitigar a evasão universitária através da tecnologia e informação estruturada.</p>
+                <p>Projeto de Extensão Curricular focado em mitigar a evasão universitária através da tecnologia e informação estruturada[cite: 1].</p>
             </div>
             <div class="footer-team">
                 <h4>Desenvolvedores (Ciência de Dados)</h4>
                 <ul>
-                    <li>Bruna dos Santos Sanches</li>
-                    <li>João Vitor Andrade de Oliveira</li>
-                    <li>Laysa Cristina Luz Calixto Jaques</li>
+                    <li>Bruna dos Santos Sanches[cite: 1]</li>
+                    <li>João Vitor Andrade de Oliveira[cite: 1]</li>
+                    <li>Laysa Cristina Luz Calixto Jaques[cite: 1]</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Universidade Santa Cecília (UNISANTA). Todos os direitos reservados.
-        </div>
+        <div class="footer-bottom">&copy; 2026 Universidade Santa Cecília (UNISANTA)[cite: 1]. Todos os direitos reservados.</div>
     </footer>
 
-    <!-- LÓGICA EM JAVASCRIPT -->
+    <!-- LOGICA JAVASCRIPT EXPANDIDA -->
     <script>
-        // Abre o Modal de Cadastro
-        function openRegisterModal() {
-            document.getElementById('registerModal').classList.add('active');
+        let tokenGerado = "";
+        let emailDestinoTemp = "";
+        let fluxoEmailAtual = "welcome"; // Pode ser "welcome" ou "recovery"
+
+        window.onload = function() {
+            const usuarioLogado = localStorage.getItem('unistart_sessao_ativa');
+            if (usuarioLogado) {
+                const dados = JSON.parse(usuarioLogado);
+                entrarNoDashboard(dados.nome);
+            }
+        };
+
+        function openAuthModal(mode) {
+            document.getElementById('authModal').classList.add('active');
+            switchTab(mode);
         }
 
-        // Fecha o Modal de Cadastro
-        function closeRegisterModal() {
-            document.getElementById('registerModal').classList.remove('active');
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
         }
 
-        // Máscara simples para CPF (000.000.000-00)
+        function switchTab(mode) {
+            document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+            document.getElementById('modal-tabs-header').style.display = 'flex';
+            
+            if (mode === 'login') {
+                document.getElementById('tab-login').classList.add('active');
+                document.getElementById('loginForm').classList.add('active');
+            } else if (mode === 'register') {
+                document.getElementById('tab-register').classList.add('active');
+                document.getElementById('cadastroForm').classList.add('active');
+            } else if (mode === 'forgot') {
+                document.getElementById('modal-tabs-header').style.display = 'none'; // Esconde abas na recuperação
+                document.getElementById('forgotForm').classList.add('active');
+            } else if (mode === 'reset') {
+                document.getElementById('modal-tabs-header').style.display = 'none';
+                document.getElementById('resetPasswordForm').classList.add('active');
+            }
+        }
+
         function mascaraCPF(input) {
             let v = input.value.replace(/\D/g, "");
             v = v.replace(/(\d{3})(\d)/, "$1.$2");
@@ -655,75 +422,155 @@
             input.value = v;
         }
 
-        // Fecha a simulação do email e vai pro dashboard
-        function closeEmailSimulation() {
-            document.getElementById('emailSimulation').style.display = 'none';
-            // Transiciona a tela
+        function entrarNoDashboard(nomeCompleto) {
             document.getElementById('landing-page-content').style.display = 'none';
             document.getElementById('dashboard-area').style.display = 'block';
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            document.getElementById('user-display-name').innerText = nomeCompleto.split(' ')[0];
+            document.getElementById('nav-menu').style.display = 'none';
         }
 
-        // Captura e Processa o formulário de Cadastro
+        function handleLogin(event) {
+            event.preventDefault();
+            const emailIn = document.getElementById('login-email').value;
+            const senhaIn = document.getElementById('login-senha').value;
+            const bancoLocal = localStorage.getItem('cadastro_unistart');
+
+            if (!bancoLocal) {
+                alert('Nenhum usuário cadastrado neste navegador. Clique em "Criar Conta"!');
+                return;
+            }
+
+            const contaExistente = JSON.parse(bancoLocal);
+
+            if (contaExistente.email === emailIn && contaExistente.senha === senhaIn) {
+                localStorage.setItem('unistart_sessao_ativa', JSON.stringify(contaExistente));
+                closeAuthModal();
+                entrarNoDashboard(contaExistente.nome);
+            } else {
+                alert('E-mail ou senha incorretos. Caso tenha esquecido, clique em "Esqueceu a senha?"');
+            }
+        }
+
         function handleCadastro(event) {
-            event.preventDefault(); // Impede a página de recarregar
-            
-            // Pega os valores digitados
+            event.preventDefault();
             const nomeInput = document.getElementById('nome').value;
             const cpfInput = document.getElementById('cpf').value;
             const emailInput = document.getElementById('email').value;
             const senhaInput = document.getElementById('senha').value;
 
-            // Validação extra da senha (mínimo 8 caracteres)
-            if (senhaInput.length < 8) {
-                alert('A senha precisa ter no mínimo 8 caracteres.');
+            const novoAluno = { nome: nomeInput, cpf: cpfInput, email: emailInput, senha: senhaInput };
+
+            localStorage.setItem('cadastro_unistart', JSON.stringify(novoAluno));
+            localStorage.setItem('unistart_sessao_ativa', JSON.stringify(novoAluno));
+
+            fluxoEmailAtual = "welcome";
+            document.getElementById('email-destinatario').innerText = emailInput;
+            
+            // Renderiza o template de Boas-vindas com a Logo
+            document.getElementById('email-dinamico-content').innerHTML = `
+                <div class="logo-container" style="justify-content: center; margin-bottom: 25px;">
+                    <div class="logo-play"><i class="fas fa-play"></i></div>
+                    <div class="logo-text">Uni<span>Start</span></div>
+                </div>
+                <h1 style="font-size: 1.6rem; margin-bottom: 15px;">Seja bem-vindo ao UniStart!</h1>
+                <p style="color: var(--gray-text); margin-bottom: 20px;">Olá, <strong>${nomeInput}</strong>. Sua jornada rumo ao sucesso no Ensino Superior começou oficialmente[cite: 1]!</p>
+                <p style="color: var(--gray-text); font-size: 0.9rem;">Explore nossos módulos de planejamento de carreira, LinkedIn e portfólio digital[cite: 1].</p>
+            `;
+            
+            closeAuthModal();
+            document.getElementById('emailSimulation').style.display = 'flex';
+        }
+
+        // LÓGICA DE VALIDAÇÃO DE ESQUECEU A SENHA
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            const emailIn = document.getElementById('forgot-email').value;
+            const cpfIn = document.getElementById('forgot-cpf').value;
+            const bancoLocal = localStorage.getItem('cadastro_unistart');
+
+            if (!bancoLocal) {
+                alert('Nenhuma base de dados encontrada neste navegador.');
                 return;
             }
 
-            // Cria o objeto contendo o registro do estudante (Conceito de Coleta de Dados)
-            const alunoDados = {
-                nome: nomeInput,
-                cpf: cpfInput,
-                email: emailInput,
-                dataCadastro: new Date().toISOString()
-            };
+            const conta = JSON.parse(bancoLocal);
 
-            // Salva no banco de dados local do navegador (localStorage)
-            localStorage.setItem('cadastro_unistart', JSON.stringify(alunoDados));
+            // Validação Cruzada: Verifica se o email E o CPF combinam com a mesma conta
+            if (conta.email === emailIn && conta.cpf === cpfIn) {
+                // Gera token de 6 dígitos aleatórios
+                tokenGerado = Math.floor(100000 + Math.random() * 900000).toString();
+                emailDestinoTemp = emailIn;
+                fluxoEmailAtual = "recovery";
 
-            // Configura os textos do e-mail simulado de boas-vindas
-            document.getElementById('email-destinatario').innerText = emailInput;
-            document.getElementById('email-nome-aluno').innerText = nomeInput;
-            
-            // Configura o nome do usuário no topo da área logada (Dashboard)
-            document.getElementById('user-display-name').innerText = nomeInput.split(' ')[0]; // Pega só o primeiro nome
+                document.getElementById('email-destinatario').innerText = emailIn;
+                
+                // Renderiza o template de Recuperação de Senha com a Logo
+                document.getElementById('email-dinamico-content').innerHTML = `
+                    <div class="logo-container" style="justify-content: center; margin-bottom: 25px;">
+                        <div class="logo-play"><i class="fas fa-play"></i></div>
+                        <div class="logo-text">Uni<span>Start</span></div>
+                    </div>
+                    <h1 style="font-size: 1.5rem; margin-bottom: 15px; color: #dc3545;">Código de Recuperação de Conta</h1>
+                    <p style="color: var(--gray-text); margin-bottom: 20px;">Olá! Detectamos uma solicitação de redefinição de acesso para a sua conta UniStart.</p>
+                    <div style="background-color: var(--purple-light); color: var(--purple-main); font-size: 2rem; font-weight: bold; padding: 15px; border-radius: 12px; letter-spacing: 6px; display: inline-block; margin-bottom: 20px; border: 2px dashed var(--purple-main); width: 220px;">
+                        ${tokenGerado}
+                    </div>
+                    <p style="color: var(--gray-text); font-size: 0.85rem;">Insira este código na plataforma para criar uma nova senha com segurança.</p>
+                `;
 
-            // Fecha o formulário de cadastro
-            closeRegisterModal();
-
-            // Dispara visualmente a notificação/Simulação do e-mail com a logo
-            document.getElementById('emailSimulation').style.display = 'flex';
-        }
-    </script> 
-    <!-- LÓGICA EM JAVASCRIPT -->
-    <script>
-        // Assim que a página carregar, verifica se o usuário já tem cadastro salvo
-        window.onload = function() {
-            const cadastroExistente = localStorage.getItem('cadastro_unistart');
-            
-            if (cadastroExistente) {
-                const dadosAluno = JSON.parse(cadastroExistente);
-                document.getElementById('landing-page-content').style.display = 'none';
-                document.getElementById('dashboard-area').style.display = 'block';
-                document.getElementById('user-display-name').innerText = dadosAluno.nome.split(' ')[0];
+                closeAuthModal();
+                document.getElementById('emailSimulation').style.display = 'flex';
+            } else {
+                alert('Os dados informados (E-mail e CPF) não coincidem com nenhum cadastro ativo. Verifique as informações.');
             }
-        };
-
-        // Abre o Modal de Cadastro
-        function openRegisterModal() {
-            document.getElementById('registerModal').classList.add('active');
         }
-        
-        // ... (o resto das funções que já estavam lá continuam iguais abaixo)
+
+        // SALVAR A NOVA SENHA ATUALIZADA
+        function handleResetPassword(event) {
+            event.preventDefault();
+            const codigoIn = document.getElementById('reset-code').value;
+            const novaSenhaIn = document.getElementById('reset-senha').value;
+
+            if (codigoIn !== tokenGerado) {
+                alert('Código verificador incorreto. Verifique a notificação de e-mail e tente de novo.');
+                return;
+            }
+
+            if (novaSenhaIn.length < 8) {
+                alert('Para segurança do aluno, a senha precisa conter pelo menos 8 dígitos.');
+                return;
+            }
+
+            // Puxa do banco, edita a propriedade senha e grava de volta
+            const contaOriginal = JSON.parse(localStorage.getItem('cadastro_unistart'));
+            contaOriginal.senha = novaSenhaIn;
+            localStorage.setItem('cadastro_unistart', JSON.stringify(contaOriginal));
+
+            alert('Senha atualizada com sucesso! Seu novo acesso já está ativo.');
+            
+            // Limpa os campos do formulário para próximos testes
+            document.getElementById('reset-code').value = "";
+            document.getElementById('reset-senha').value = "";
+            
+            openAuthModal('login'); // Leva o usuário de volta para fazer login com a senha nova
+        }
+
+        function closeEmailSimulation() {
+            document.getElementById('emailSimulation').style.display = 'none';
+            
+            if (fluxoEmailAtual === "welcome") {
+                const dados = JSON.parse(localStorage.getItem('unistart_sessao_ativa'));
+                entrarNoDashboard(dados.nome);
+            } else if (fluxoEmailAtual === "recovery") {
+                openAuthModal('reset'); // Se veio do fluxo de recuperar, joga ele na tela de digitar o código
+            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('unistart_sessao_ativa');
+            window.location.reload();
+        }
+    </script>
 </body>
 </html>
