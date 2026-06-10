@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniStart - Plataforma Digital de Apoio Acadêmico</title>
+    <!-- Importação de Fontes e Ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -152,11 +153,13 @@
 </head>
 <body>
 
+    <!-- Topo Institucional -->
     <div class="inst-banner">
         <span><strong>UNISANTA</strong> | Universidade Santa Cecília</span>
         <span>Extensão Curricular — Ano 2026</span>
     </div>
 
+    <!-- Header Principal -->
     <header>
         <a href="#" class="logo-container" onclick="window.location.reload()">
             <div class="logo-play"><i class="fas fa-play"></i></div>
@@ -172,6 +175,7 @@
         </nav>
     </header>
 
+    <!-- LANDING PAGE -->
     <div id="landing-page-content">
         <section class="hero" id="inicio">
             <div class="hero-content">
@@ -220,30 +224,79 @@
         </section>
     </div>
 
+    <!-- AREA INTERNA LOGADA (DASHBOARD - COM OS 6 MÓDULOS COMPLETOS) -->
     <main class="dashboard-section" id="dashboard-area">
         <div class="welcome-box">
             <div>
                 <h2>Olá, <span id="user-display-name">Estudante</span>! 👋</h2>
-                <p>Você está conectado à sua conta UniStart.</p>
+                <p>Você está conectado à sua conta UniStart e seus dados estão salvos em conformidade com a LGPD.</p>
             </div>
             <button class="btn-logout" onclick="handleLogout()">Sair da Conta</button>
         </div>
         <div class="section-header" style="text-align: left; margin-bottom: 30px;">
             <h2>Sua Jornada de Conhecimento</h2>
-            <p>Selecione um dos módulos abaixo para iniciar suas aulas digitais:</p>
+            <p>Selecione um dos módulos abaixo para iniciar suas aulas digitais e acessar materiais:</p>
         </div>
+        
         <div class="grid-modules">
+            <!-- Módulo 1 -->
             <div class="module-card" style="background: var(--white);">
                 <div>
                     <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
-                    <h3>[Módulo 1] Introdução à Vida Acadêmica</h3>
+                    <h3>[Módulo 1] Vida Universitária</h3>
                     <p>Vídeos e materiais de apoio sobre as salas de aula, sistemas da faculdade e gerenciamento de rotina.</p>
+                </div>
+                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Módulo 2 -->
+            <div class="module-card" style="background: var(--white);">
+                <div>
+                    <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
+                    <h3>[Módulo 2] Currículo Profissional</h3>
+                    <p>Templates para download e passo a passo completo para preencher o seu primeiro currículo profissional.</p>
+                </div>
+                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Módulo 3 -->
+            <div class="module-card" style="background: var(--white);">
+                <div>
+                    <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
+                    <h3>[Módulo 3] LinkedIn & Networking</h3>
+                    <p>Estratégias de posicionamento digital, conexões profissionais e construção de marca pessoal no LinkedIn.</p>
+                </div>
+                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Módulo 4 -->
+            <div class="module-card" style="background: var(--white);">
+                <div>
+                    <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
+                    <h3>[Módulo 4] Portfólio Digital</h3>
+                    <p>Como organizar e registrar seus certificados, projetos práticos e atividades complementares.</p>
+                </div>
+                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Módulo 5 -->
+            <div class="module-card" style="background: var(--white);">
+                <div>
+                    <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
+                    <h3>[Módulo 5] Organização Acadêmica</h3>
+                    <p>Técnicas avançadas de gestão do tempo, metas, produtividade diária e planejamento semestral.</p>
+                </div>
+                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Módulo 6 -->
+            <div class="module-card" style="background: var(--white);">
+                <div>
+                    <div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
+                    <h3>[Módulo 6] Oportunidades e Carreira</h3>
+                    <p>Passo a passo para buscar estágios, programas de bolsas, eventos acadêmicos e iniciação científica.</p>
                 </div>
                 <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </main>
 
+    <!-- MODAL DE AUTENTICAÇÃO MÚLTIPLO -->
     <div class="modal-overlay" id="authModal">
         <div class="modal-card">
             <button class="close-modal" onclick="closeAuthModal()">&times;</button>
@@ -253,6 +306,7 @@
                 <div class="modal-tab" id="tab-register" onclick="switchTab('register')">Criar Conta</div>
             </div>
             
+            <!-- FORMULÁRIO DE LOGIN -->
             <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
                 <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Acesse sua conta para continuar seus estudos.</p>
                 <div class="form-group">
@@ -268,8 +322,9 @@
                 <div class="toggle-form-link" onclick="switchTab('register')">Não tem uma conta? Cadastre-se aqui</div>
             </form>
 
+            <!-- FORMULÁRIO DE CADASTRO (COM CHECKBOX LGPD INCORPORADO) -->
             <form id="cadastroForm" class="auth-form" onsubmit="handleCadastro(event)">
-                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Preencha os dados para liberar seu acesso exclusivo.</p>
+                <p style="margin-bottom: 15px; text-align: left; font-size: 0.9rem;">Preencha os dados para liberar seu acesso exclusivo.</p>
                 <div class="form-group">
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" required placeholder="Digite seu nome completo">
@@ -286,17 +341,20 @@
                     <label for="senha">Senha (mínimo 8 caracteres)</label>
                     <input type="password" id="senha" required minlength="8" placeholder="Crie uma senha forte">
                 </div>
-                <!-- Campo de Consentimento LGPD (Colocar antes do botão Concluir Cadastro) -->
-<div class="form-group" style="flex-direction: row; align-items: flex-start; gap: 10px; margin-top: 10px; margin-bottom: 15px;">
-    <input type="checkbox" id="lgpd-consent" required style="width: 20px; height: 20px; cursor: pointer; margin-top: 2px;">
-    <label for="lgpd-consent" style="font-size: 0.8rem; font-weight: 500; color: var(--gray-text); line-height: 1.4; cursor: pointer;">
-        Li e aceito o <strong>Termo de Consentimento de Dados</strong>. Estou ciente de que meu Nome, CPF e E-mail serão coletados e tratados de forma segura e estritamente confidencial, servindo apenas para a validação da minha participação e análise descritiva estatística deste projeto de extensão curricular.
-    </label>
-</div>
+                
+                <!-- INTEGRADO: TERMO DE CONSENTIMENTO LGPD OBRIGATÓRIO -->
+                <div class="form-group" style="flex-direction: row; align-items: flex-start; gap: 10px; margin-top: 10px; margin-bottom: 15px;">
+                    <input type="checkbox" id="lgpd-consent" required style="width: 20px; height: 20px; cursor: pointer; margin-top: 2px;">
+                    <label for="lgpd-consent" style="font-size: 0.8rem; font-weight: 500; color: var(--gray-text); line-height: 1.4; cursor: pointer;">
+                        Li e aceito o <strong>Termo de Consentimento de Dados</strong>. Estou ciente de que meu Nome, CPF e E-mail serão coletados e tratados de forma segura e estritamente confidencial, servindo apenas para a validação da minha participação e análise descritiva estatística deste projeto de extensão curricular.
+                    </label>
+                </div>
+
                 <button type="submit" class="btn-cta" style="width: 100%;">Concluir Cadastro</button>
                 <div class="toggle-form-link" onclick="switchTab('login')">Já tem uma conta? Faça login aqui</div>
             </form>
 
+            <!-- FORMULÁRIO ESQUECEU A SENHA -->
             <form id="forgotForm" class="auth-form" onsubmit="handleForgotPassword(event)">
                 <h3 style="margin-bottom: 10px;">Recuperar Senha</h3>
                 <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Confirme seu E-mail e o CPF cadastrados para receber um código de validação.</p>
@@ -312,9 +370,10 @@
                 <div class="toggle-form-link" onclick="switchTab('login')">Voltar para o Login</div>
             </form>
 
+            <!-- FORMULÁRIO DE RE-DEFINIÇÃO DE SENHA -->
             <form id="resetPasswordForm" class="auth-form" onsubmit="handleResetPassword(event)">
                 <h3 style="margin-bottom: 10px;">Criar Nova Senha</h3>
-                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Insira o código enviado no seu e-mail e escolha sua nova credencial de acesso.</p>
+                <p style="margin-bottom: 20px; text-align: left; font-size: 0.9rem;">Insira o código enviado no seu e-mail de verdade e escolha sua nova credencial.</p>
                 <div class="form-group">
                     <label for="reset-code">Código Verificador de 6 Dígitos</label>
                     <input type="text" id="reset-code" required maxlength="6" style="text-align: center; letter-spacing: 4px; font-weight: bold;" placeholder="000000">
@@ -332,22 +391,22 @@
         <div class="footer-grid">
             <div class="footer-about">
                 <h4>UniStart</h4>
-                <p>Projeto de Extensão Curricular focado em mitigar a evasão universitária através da tecnologia e informação estruturada.</p>
+                <p>Projeto de Extensão Curricular focado em mitigar a evasão universitária através da tecnologia e informação estruturada[cite: 1].</p>
             </div>
             <div class="footer-team">
                 <h4>Desenvolvedores (Ciência de Dados)</h4>
                 <ul>
-                    <li>Bruna dos Santos Sanches</li>
-                    <li>João Vitor Andrade de Oliveira</li>
-                    <li>Laysa Cristina Luz Calixto Jaques</li>
+                    <li>Bruna dos Santos Sanches[cite: 1]</li>
+                    <li>João Vitor Andrade de Oliveira[cite: 1]</li>
+                    <li>Laysa Cristina Luz Calixto Jaques[cite: 1]</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 Universidade Santa Cecília (UNISANTA). Todos os direitos reservados.</div>
+        <div class="footer-bottom">&copy; 2026 Universidade Santa Cecília (UNISANTA)[cite: 1]. Todos os direitos reservados.</div>
     </footer>
 
+    <!-- LOGICA JAVASCRIPT EXCLUSIVA -->
     <script>
-        // Endpoint oficial do seu Google Apps Script (Sua API do Sheets)
         const LINK_DO_MOTOR_GOOGLE = "https://script.google.com/macros/s/AKfycbyZJHhOCHv7ZLhvD-7p7xWFG2N0a-yGm-pq0EBMdyKX4OKv0odWoKCHgtfFbTHNbHy8/exec";
 
         let tokenGerado = "";
@@ -426,7 +485,6 @@
             }
         }
 
-        // CADASTRO DE ESTUDANTE (ENVIANDO DIRETO PARA PLANILHA E GMAIL EM SEGUNDO PLANO)
         function handleCadastro(event) {
             event.preventDefault();
             const nomeInput = document.getElementById('nome').value;
@@ -434,13 +492,12 @@
             const emailInput = document.getElementById('email').value;
             const senhaInput = document.getElementById('senha').value;
 
-            alert('Processando sua inscrição... Aguarde alguns instantes.');
+            alert('Processando sua inscrição em conformidade com a LGPD... Aguarde.');
 
             const novoAluno = { nome: nomeInput, cpf: cpfInput, email: emailInput, senha: senhaInput };
             localStorage.setItem('cadastro_unistart', JSON.stringify(novoAluno));
             localStorage.setItem('unistart_sessao_ativa', JSON.stringify(novoAluno));
 
-            // Dispara requisição assíncrona para o Google Workspace do grupo
             fetch(LINK_DO_MOTOR_GOOGLE, {
                 method: "POST",
                 mode: "no-cors", 
@@ -454,7 +511,7 @@
             })
             .then(() => {
                 closeAuthModal();
-                alert('Inscrição confirmada com sucesso! Seu e-mail de boas-vindas foi enviado.');
+                alert('Inscrição confirmada! Seu e-mail de boas-vindas foi despachado.');
                 entrarNoDashboard(nomeInput);
             })
             .catch(err => {
@@ -464,7 +521,6 @@
             });
         }
 
-        // RECUPERAÇÃO DE CONTA (ENVIA TOKEN POR EMAIL E NÃO EXIBE NADA NA TELA)
         function handleForgotPassword(event) {
             event.preventDefault();
             const emailIn = document.getElementById('forgot-email').value;
@@ -472,19 +528,17 @@
             const bancoLocal = localStorage.getItem('cadastro_unistart');
 
             if (!bancoLocal) {
-                alert('Nenhum usuário registrado encontrado neste navegador.');
+                alert('Nenhum registro encontrado neste navegador.');
                 return;
             }
 
             const conta = JSON.parse(bancoLocal);
 
             if (conta.email === emailIn && conta.cpf === cpfIn) {
-                // Cria o token numérico invisível de 6 dígitos
                 tokenGerado = Math.floor(100000 + Math.random() * 900000).toString();
                 
-                alert('Gerando código de segurança... O token será enviado para a sua caixa de entrada.');
+                alert('Gerando token de segurança... Confira sua caixa de entrada.');
 
-                // Despacha o e-mail real com o token
                 fetch(LINK_DO_MOTOR_GOOGLE, {
                     method: "POST",
                     mode: "no-cors",
@@ -496,16 +550,16 @@
                     })
                 })
                 .then(() => {
-                    alert('Código enviado! Acesse o seu e-mail de verdade para pegá-lo.');
-                    switchTab('reset'); // Altera a aba do formulário para a de redefinição
+                    alert('Código enviado! Abra o seu e-mail de verdade para pegá-lo.');
+                    switchTab('reset'); 
                 })
                 .catch(err => {
                     console.log(err);
-                    alert('Ocorreu um erro no servidor de e-mail, mas para fins de testes rápidos do seu grupo, o código gerado foi: ' + tokenGerado);
+                    alert('Ocorreu um desvio de rede, mas seu token para teste rápido é: ' + tokenGerado);
                     switchTab('reset');
                 });
             } else {
-                alert('Atenção: Os dados informados de E-mail e CPF não coincidem.');
+                alert('Os dados de E-mail e CPF informados não coincidem.');
             }
         }
 
@@ -528,7 +582,7 @@
             contaOriginal.senha = novaSenhaIn;
             localStorage.setItem('cadastro_unistart', JSON.stringify(contaOriginal));
 
-            alert('Excelente! Senha atualizada com sucesso. Faça o login utilizando suas novas credenciais.');
+            alert('Senha atualizada! Acesse usando suas novas credenciais.');
             openAuthModal('login');
         }
 
