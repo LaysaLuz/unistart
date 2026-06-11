@@ -207,7 +207,6 @@
         </a>
         <nav>
             <ul id="nav-menu">
-                <!-- Controlado dinamicamente via JS (Deslogado vs Logado) -->
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#trilhas">Trilhas</a></li>
                 <li><button class="btn-login" onclick="openAuthModal('login')">Entrar</button></li>
@@ -216,13 +215,13 @@
         </nav>
     </header>
 
-    <!-- LANDING PAGE (Visível apenas Deslogado) -->
+    <!-- LANDING PAGE (Visível Deslogado) -->
     <div id="landing-page-content">
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <div class="hero-tag">Conectando Futuros</div>
                 <h1>Apoio na transição para o <span>Ensino Superior</span></h1>
-                <p>Centralizamos ferramentas, planejamentos e trilhas de capacitação para que a sua jornada acadêmica comece de forma estruturada, consciente e focada no sucesso profissional.</p>
+                <p>Centralizamos ferramentas, planejamentos e trilhas de capsitação para que a sua jornada acadêmica comece de forma estruturada, consciente e focada no sucesso profissional.</p>
                 <button class="btn-cta" onclick="openAuthModal('register')">Explorar Trilhas</button>
             </div>
             <div style="flex: 1; display: flex; justify-content: center;">
@@ -265,11 +264,11 @@
         </section>
     </div>
 
-    <!-- AREA INTERNA LOGADA (DASHBOARD - COM OS 6 MÓDULOS) -->
+    <!-- AREA INTERNA LOGADA (DASHBOARD - 6 MÓDULOS) -->
     <main class="dashboard-section" id="dashboard-area">
         <div class="welcome-box">
             <h2>Olá, <span id="user-display-name">Estudante</span>! 👋</h2>
-            <p>Você está conectado à sua plataforma. Seus dados estão armazenados de forma criptografada localmente e em conformidade com a LGPD.</p>
+            <p>Você está conectado à sua plataforma. Seus dados estão armazenados em conformidade com a LGPD e os princípios de privacidade.</p>
         </div>
         
         <div class="section-header" style="text-align: left; margin-bottom: 30px;" id="internas-ancora">
@@ -278,32 +277,37 @@
         </div>
         
         <div class="grid-modules">
-            <!-- Módulos de 1 a 6 -->
-            <div class="module-card" style="background: var(--white);">
+            <!-- Módulo 1 (Interativo com Pop-up) -->
+            <div class="module-card" style="background: var(--white);" onclick="openModuleModal(1)">
                 <div><div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
-                <h3>[Módulo 1] Vida Universitária</h3><p>Vídeos e materiais de apoio sobre as salas de aula, sistemas da faculdade e gerenciamento de rotina.</p></div>
-                <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
+                <h3>[Módulo 1] Vida Universitária</h3><p>Vídeos e materiais de apoio sobre as salas de aula, rotina e gerenciamento de rotina acadêmica.</p></div>
+                <span class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></span>
             </div>
+            <!-- Módulo 2 -->
             <div class="module-card" style="background: var(--white);">
                 <div><div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
                 <h3>[Módulo 2] Currículo Profissional</h3><p>Templates para download e passo a passo completo para preencher o seu primeiro currículo profissional.</p></div>
                 <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
             </div>
+            <!-- Módulo 3 -->
             <div class="module-card" style="background: var(--white);">
                 <div><div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
                 <h3>[Módulo 3] LinkedIn & Networking</h3><p>Estratégias de posicionamento digital, conexões profissionais e construção de marca pessoal no LinkedIn.</p></div>
                 <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
             </div>
+            <!-- Módulo 4 -->
             <div class="module-card" style="background: var(--white);">
                 <div><div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
                 <h3>[Módulo 4] Portfólio Digital</h3><p>Como organizar e registrar seus certificados, projetos práticos e atividades complementares.</p></div>
                 <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
             </div>
+            <!-- Módulo 5 -->
             <div class="module-card" style="background: var(--white);">
                 <div><div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
                 <h3>[Módulo 5] Organização Acadêmica</h3><p>Técnicas avançadas de gestão do tempo, metas, produtividade diária e planejamento semestral.</p></div>
                 <a href="#" class="module-link" style="color: var(--turquoise-dark);">Assistir Aula <i class="fas fa-chevron-right"></i></a>
             </div>
+            <!-- Módulo 6 -->
             <div class="module-card" style="background: var(--white);">
                 <div><div class="module-icon" style="background-color: var(--turquoise-light); color: var(--turquoise-dark);"><i class="fas fa-play-circle"></i></div>
                 <h3>[Módulo 6] Oportunidades e Carreira</h3><p>Passo a passo para buscar estágios, programas de bolsas, eventos acadêmicos e iniciação científica.</p></div>
@@ -376,35 +380,58 @@
             <h2 style="margin-bottom: 15px;">Informações Pessoais</h2>
             <p style="font-size: 0.85rem; color: var(--gray-text); margin-bottom: 20px;">Tratamento seguro e transparente dos seus dados (LGPD).</p>
             
-            <!-- Avatar Icon Customizado -->
-            <div class="profile-avatar-box">
-                <i class="fas fa-user-graduate"></i>
-            </div>
+            <div class="profile-avatar-box"><i class="fas fa-user-graduate"></i></div>
             
-            <!-- Grid de Informações -->
             <div class="profile-info-grid">
-                <div class="profile-info-item">
-                    <span>Nome Completo</span>
-                    <strong id="prof-nome">Carregando...</strong>
-                </div>
-                <div class="profile-info-item">
-                    <span>CPF</span>
-                    <strong id="prof-cpf">000.000.000-00</strong>
-                </div>
-                <div class="profile-info-item">
-                    <span>E-mail Acadêmico</span>
-                    <strong id="prof-email">carregando@unisanta.br</strong>
-                </div>
-                <div class="profile-info-item">
-                    <span>Tipo de Trilha Seguido</span>
-                    <strong style="color: var(--purple-main); font-weight: 700;">
-                        <i class="fas fa-route" style="margin-right: 5px;"></i> Geral — Transição Universitária
-                    </strong>
-                </div>
+                <div class="profile-info-item"><span>Nome Completo</span><strong id="prof-nome">Carregando...</strong></div>
+                <div class="profile-info-item"><span>CPF</span><strong id="prof-cpf">000.000.000-00</strong></div>
+                <div class="profile-info-item"><span>E-mail Informado</span><strong id="prof-email">carregando@exemplo.com</strong></div>
+                <div class="profile-info-item"><span>Tipo de Trilha Ativa</span><strong style="color: var(--purple-main); font-weight: 700;"><i class="fas fa-route" style="margin-right: 5px;"></i> Geral — Transição Universitária</strong></div>
             </div>
             
-            <!-- Botão Sair da Conta movido de forma organizada para cá -->
             <button class="btn-logout" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Encerrar Sessão</button>
+        </div>
+    </div>
+
+    <!-- POP-UP EXCLUSIVO DA AULA DO MÓDULO 1 (TOTALMENTE GENÉRICO) -->
+    <div class="modal-overlay" id="module1Modal">
+        <div class="modal-card" style="max-width: 800px; width: 90%; padding: 30px;">
+            <button class="close-modal" onclick="closeModuleModal(1)">&times;</button>
+            
+            <span style="color: var(--turquoise-dark); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Módulo 1 // Aula Digital</span>
+            <h2 style="margin-bottom: 20px; font-size: 1.8rem;">Introdução à Vida Acadêmica</h2>
+            
+            <!-- Área do Player de Vídeo -->
+            <div style="background-color: #121212; width: 100%; aspect-ratio: 16/9; border-radius: 12px; display: flex; justify-content: center; align-items: center; color: white; flex-direction: column; gap: 15px; box-shadow: inset 0 0 100px rgba(0,0,0,0.8); position: relative; overflow: hidden;">
+                <i class="fas fa-play-circle" style="font-size: 4rem; color: var(--turquoise); cursor: pointer; transition: var(--transition);" onclick="alert('Aqui entrará o player de vídeo do YouTube do grupo!')"></i>
+                <span style="font-weight: 600; font-size: 1rem; color: #b3b3b3;">Play na Aula: Adaptação e Sucesso no Ensino Superior</span>
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 6px; background-color: #2d2d2d;">
+                    <div style="width: 35%; height: 100%; background: linear-gradient(to right, var(--purple-main), var(--turquoise));"></div>
+                </div>
+            </div>
+
+            <!-- Conteúdo Textual e Download -->
+            <div style="display: flex; gap: 30px; margin-top: 25px; flex-wrap: wrap; text-align: left;">
+                <div style="flex: 2; min-width: 280px;">
+                    <h4 style="margin-bottom: 10px;"><i class="fas fa-book-open" style="color: var(--purple-main); margin-right: 8px;"></i> O que você vai aprender:</h4>
+                    <p style="font-size: 0.95rem; color: var(--gray-text); margin-bottom: 15px;">Abordamos os principais pilares para mitigar o choque da transição para a faculdade. Você entenderá como funcionam as métricas de aprovação, a importância do controle de faltas, a gestão das horas complementares e como organizar sua nova rotina para evitar o acúmulo de matérias.</p>
+                    
+                    <h4 style="margin-bottom: 10px;"><i class="fas fa-tasks" style="color: var(--purple-main); margin-right: 8px;"></i> Checklist de Sobrevivência Universitária:</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; color: var(--gray-text); display: flex; flex-direction: column; gap: 8px;">
+                        <li><input type="checkbox" style="margin-right: 8px; accent-color: var(--purple-main);"> Localizar os acessos e ferramentas do Portal do Aluno</li>
+                        <li><input type="checkbox" style="margin-right: 8px; accent-color: var(--purple-main);"> Baixar e salvar o Calendário Acadêmico do semestre</li>
+                        <li><input type="checkbox" style="margin-right: 8px; accent-color: var(--purple-main);"> Criar uma planilha ou cronograma pessoal de estudos</li>
+                    </ul>
+                </div>
+                
+                <!-- Bloco de Downloads -->
+                <div style="flex: 1; min-width: 200px; background-color: var(--bg-light); padding: 20px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; border: 1px dashed rgba(0,0,0,0.1);">
+                    <i class="fas fa-file-pdf" style="font-size: 2.5rem; color: #dc3545; margin-bottom: 10px; text-align: center;"></i>
+                    <h5 style="text-align: center; margin-bottom: 5px;">Material de Apoio</h5>
+                    <p style="font-size: 0.8rem; color: var(--gray-text); text-align: center; margin-bottom: 15px;">Guia de bolso prático com métodos de organização de tempo.</p>
+                    <button class="btn-cta" style="padding: 8px 15px; font-size: 0.85rem;" onclick="alert('Download simulado do PDF do Módulo 1!')"><i class="fas fa-download"></i> Baixar PDF</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -449,7 +476,6 @@
             document.getElementById('authModal').classList.remove('active');
         }
 
-        // Abre o novo Modal de Informações Pessoais populando as variáveis
         function openProfileModal() {
             const bancoLocal = localStorage.getItem('cadastro_unistart');
             if (bancoLocal) {
@@ -461,9 +487,11 @@
             document.getElementById('profileModal').classList.add('active');
         }
 
-        function closeProfileModal() {
-            document.getElementById('profileModal').classList.remove('active');
-        }
+        function closeProfileModal() { document.getElementById('profileModal').classList.remove('active'); }
+
+        // Controladores dos Módulos de Estudo
+        function openModuleModal(id) { document.getElementById('module' + id + 'Modal').classList.add('active'); }
+        function closeModuleModal(id) { document.getElementById('module' + id + 'Modal').classList.remove('active'); }
 
         function switchTab(mode) {
             document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
@@ -493,13 +521,11 @@
             input.value = v;
         }
 
-        // ALTERAÇÃO CRUCIAL: Modifica os itens da Navbar ao invés de ocultar a barra inteira
         function entrarNoDashboard(nomeCompleto) {
             document.getElementById('landing-page-content').style.display = 'none';
             document.getElementById('dashboard-area').style.display = 'block';
             document.getElementById('user-display-name').innerText = nomeCompleto.split(' ')[0];
             
-            // Desenha a Navbar no estado LOGADO
             const navMenu = document.getElementById('nav-menu');
             navMenu.innerHTML = `
                 <li><a href="#internas-ancora" style="color: var(--purple-main); font-weight: 700;">Minhas Trilhas</a></li>
